@@ -22,22 +22,23 @@ public class Unit : MonoBehaviour
 
     }
 
-    public void Attack(Unit target)
+    public int Attack(Unit target)
     {
+        int randomValue = Random.Range(0, 10);
+        int damage;
+        if (randomValue < 3)
+        {
+            damage = power * 2;
+        }
+        else
+        {
+            damage = power;
+        }
+        target.hp -= damage;
         if (target.hp < 0)
         {
             target.hp = 0;
         }
-        int randomValue = Random.Range(0, 10);
-        if (randomValue < 3)
-        {
-            target.hp -= power * 2;
-        }
-        else
-        {
-            target.hp -= power;
-        }
-
-
+        return damage;
     }
 }
