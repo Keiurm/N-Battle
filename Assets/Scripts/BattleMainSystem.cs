@@ -79,7 +79,6 @@ public class BattleMainSystem : MonoBehaviour
 
         player.hpSlider.value = player.hp;
         enemy.hpSlider.value = enemy.hp;
-        Debug.Log(player.hp);
         if (player.hp <= 0)
         {
             Label.SetActive(true);
